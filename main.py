@@ -47,7 +47,6 @@ for i in range(0, entries):
     historyDict = {"Date" : str(historyFiltered[i][0].date()), "Time" : str(historyFiltered[i][0].time()), "URL" : historyFiltered[i][1], "Title" : historyFiltered[i][2]}
     historyJSON.append(historyDict)
 
-print(historyJSON)
 with open ("data.json") as file:
     data = json.load(file)
 
@@ -58,3 +57,5 @@ data["Histories"][Candidate] = historyJSON
 
 with open ("data.json", 'w') as file:
     json.dump(data, file, indent=2)
+
+print("Save complete, rerun to add next candidate.")
